@@ -2,10 +2,12 @@ package com.example.musicplaylist
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Display
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -50,47 +52,45 @@ class MainActivity : ComponentActivity() {
 
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.fillMaxSize()
-            ) {
+            ) {}
 
-            }
-
-                Text(text = "Music playlist App",
-                    fontSize = 40.sp,
-                    fontWeight = FontWeight.Black
-
-                )
-            Divider()
-            OutlinedTextField(
-                value =song,
-                onValueChange = {text ->
-                    song = text
-
-                },
+            Text(
+                text = "Music playlist App",
+                fontSize = 40.sp,
+                fontWeight = FontWeight.Black
 
             )
-            Spacer(Modifier.height(50.dp))//Vertical spacing.
 
-            Row {
-                Button(onClick = {
-                    //Run when the button is clicked/
-                    val display = Intent(this@MainActivity, Secondscreen::class.java)
-                    val AddtoPlaylist = null
-                    startActivity(AddtoPlaylist)
-                }) {
-                    Text(text = "Add to Playlist")
-                    var song by remember {mutableStateOf("")}
-                    var artists by remember {mutableStateOf("")}
-                    var rating by remember {mutableStateOf("")}
-                    var comments by remember {mutableStateOf("")}
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                Alignment.TopCenter
+
+            ) {
+
+                Spacer(Modifier.height(150.dp))//Vertical spacing.
+
+                Row {
+                    Button(onClick = {
+                        //Run when the button is clicked/
+                        val addtoPlaylist = Intent(this@MainActivity, Secondscreen::class.java)
+                        val display = null
+                        startActivity(addtoPlaylist)
+                    }) {
+                        Text(text = "Add to Playlist")
+                        var song by remember { mutableStateOf("") }
+                        var artists by remember { mutableStateOf("") }
+                        var rating by remember { mutableStateOf("") }
+                        var comments by remember { mutableStateOf("") }
+                    }
                 }
+
+
+                //---"Add item" Dialog UI---
+                //This dialog is shown when 'song Add itemDialog' is true
+
+
             }
-
-
-
-            //---"Add item" Dialog UI---
-            //This dialog is shown when 'song Add itemDialog' is true
-
-
         }
     }
 }
+

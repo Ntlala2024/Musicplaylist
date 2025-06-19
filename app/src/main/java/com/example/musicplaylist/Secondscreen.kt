@@ -26,8 +26,8 @@ class Secondscreen : ComponentActivity() {
             Row {
                 //Run when the button is clicked/
                 val display = Intent(this@Secondscreen, Secondscreen::class.java)
-                val Display = null
-                startActivity(Display)
+                val addtodiplay = null
+                startActivity(addtodiplay)
                 Button(
                     onClick = {}
                 )
