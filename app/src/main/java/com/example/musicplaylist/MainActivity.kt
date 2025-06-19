@@ -145,15 +145,10 @@ class MainActivity : ComponentActivity() {
             //This dialog is shown when 'song Add itemDialog' is true
             val add_question_button = null
             add_question_button.setOnClickListener {
-                val intent = Intent(this@MainActivity::class.java)
+                val intent = Intent(this@MainActivity, Secondscreen::class.java)
                 val resultLauncher = null
                 resultLauncher.launch(intent)
-                val first_button = null
-                first_button.visibility = View.INVISIBLE
-                val second_button = null
-                second_button.visibility = View.INVISIBLE
-                val third_button = null
-                third_button.visibility = View.INVISIBLE
+
 
 
             }
@@ -163,7 +158,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-annotation class @usicplaylist
+
+
 
 
 

@@ -15,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.musicplaylist.MainActivity
 import com.example.musicplaylist.ui.theme.MusicPlaylistTheme
 
@@ -34,6 +35,113 @@ class Secondscreen : ComponentActivity() {
                 {
                     Text(text = "Display")
                 }
+                //Run when the button is clicked/
+
+                Button(
+                    onClick = {}
+                )
+                {
+                    Text(text = "Calculator")
+                    Row {
+
+
+
+                        Button(
+
+                            onClick = {
+
+                                result = (songb.toDouble() + songb.toDouble()).toString()
+
+                            },
+
+                            Modifier.padding(10.dp)
+
+                        ) {
+
+                            Text(text = "+")
+
+                        }
+
+
+
+
+
+                        Button(
+
+                            onClick = {
+
+                                result = (artista.toDouble() - arctistb.toDouble()).toString()
+
+                            },
+
+                            Modifier.padding(10.dp)
+
+                        ) {
+
+                            Text(text = "-")
+
+                        }
+
+
+
+                        Button(
+
+                            onClick = {
+
+                                result = (number1.toDouble() * number2.toDouble()).toString()
+
+                            },
+
+                            Modifier.padding(10.dp)
+
+                        ) {
+
+                            Text(text = "x")
+
+                        }
+
+
+
+                        Button(
+
+                            onClick = {
+
+                                val artist = null
+                                val song = null
+                                var result = (song.toDouble() / artist.toDouble()).toString()
+
+                            },
+
+                            Modifier.padding(10.dp)
+
+                        ) {
+
+                            Text(text = "/")
+
+                        }
+
+
+
+                        Button(
+
+                            onClick = {
+
+                                song = ""
+
+                                artist= ""
+
+                                result = ""
+
+                                comments = ""
+
+
+
+                            },
+
+                            Modifier.padding(10.dp)
+
+                        ) {
+                        }
             }
         }
     }
