@@ -15,6 +15,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.musicplaylist.ui.theme.MusicPlaylistTheme
@@ -24,17 +25,30 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            var number1 by remember { mutableStateOf("") }
+            var song by remember { mutableStateOf("") }
 
-            var number2 by remember { mutableStateOf("") }
+            var artists by remember { mutableStateOf("") }
 
-            var result by remember { mutableStateOf("") }
+            var ratings by remember { mutableStateOf("") }
 
+            var comments by remember { mutableStateOf("") }
+
+            Column(
+
+                horizontalAlignment = Alignment.CenterHorizontally,
+
+                modifier = Modifier.fillMaxSize()
+
+            ) {
+
+            }
             Column {
                 Text(text = "Music playlist App")
             }
             Row {
-                Button(onClick = {}) { }
+                Button(onClick = {}) {
+                    Text(text = "Add to Playlist")
+                }
             }
         }
     }
