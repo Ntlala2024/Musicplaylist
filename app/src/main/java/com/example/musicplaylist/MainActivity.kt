@@ -8,9 +8,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
+import androidx.compose.material3.Divider
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.mutableStateOf
@@ -61,13 +65,25 @@ class MainActivity : ComponentActivity() {
             }
 
             Row {
-                Button(onClick = {}) {
+                Button(onClick = {
+                    //Run when the button is clicked/
+                }) {
                     Text(text = "Add to Playlist")
+                    var song by remember {mutableStateOf("")}
+                    var artists by remember {mutableStateOf("")}
+                    var rating by remember {mutableStateOf("")}
+                    var comments by remember {mutableStateOf("")}
                 }
-
-
-
             }
+
+            Row {
+                Button(onClick = {
+                    //Run when the button is clicked/
+                }) {
+                    Text(text = "Next")
+                }
+            }
+
         }
     }
 }
