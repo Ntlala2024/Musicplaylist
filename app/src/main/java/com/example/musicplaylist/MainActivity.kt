@@ -3,6 +3,7 @@ package com.example.musicplaylist
 import android.content.Intent
 import android.os.Bundle
 import android.view.Display
+import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -41,6 +42,18 @@ import androidx.compose.ui.unit.sp
 import com.example.musicplaylist.Secondscreen
 import com.example.musicplaylist.ui.theme.MusicPlaylistTheme
 
+private fun Nothing?.setOnClickListener(function: () -> Unit) {
+
+
+}
+
+annotation class AddcardActivity
+
+private fun Nothing?.launch(intent: Intent) {
+
+
+}
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,12 +87,11 @@ class MainActivity : ComponentActivity() {
             }
             OutlinedTextField(
 
-                value =song,
+                value = song,
 
-                onValueChange = {text ->
+                onValueChange = { text ->
 
                     song = text
-
 
 
                 }
@@ -88,9 +100,9 @@ class MainActivity : ComponentActivity() {
 
             OutlinedTextField(
 
-                value =artists,
+                value = artists,
 
-                onValueChange={text ->
+                onValueChange = { text ->
 
                     artists = text
 
@@ -100,9 +112,9 @@ class MainActivity : ComponentActivity() {
 
             OutlinedTextField(
 
-                value =ratings,
+                value = ratings,
 
-                onValueChange={text ->
+                onValueChange = { text ->
 
                     ratings = text
 
@@ -124,25 +136,35 @@ class MainActivity : ComponentActivity() {
 
                 }
 
+
             }
-
-
-
 
 
             //---"Add item" Dialog UI---
 
             //This dialog is shown when 'song Add itemDialog' is true
+            val add_question_button = null
+            add_question_button.setOnClickListener {
+                val intent = Intent(this@MainActivity::class.java)
+                val resultLauncher = null
+                resultLauncher.launch(intent)
+                val first_button = null
+                first_button.visibility = View.INVISIBLE
+                val second_button = null
+                second_button.visibility = View.INVISIBLE
+                val third_button = null
+                third_button.visibility = View.INVISIBLE
 
 
-
-
+            }
 
         }
 
     }
-
 }
+
+annotation class @usicplaylist
+
 
 
 
