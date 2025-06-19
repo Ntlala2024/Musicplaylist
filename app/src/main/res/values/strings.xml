@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Music playlist</string>
+    <string name="title_activity_secondscreen">Secondscreen</string>
 </resources>
