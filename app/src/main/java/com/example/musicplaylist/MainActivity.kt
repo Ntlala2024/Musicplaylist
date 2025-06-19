@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
@@ -47,22 +48,26 @@ class MainActivity : ComponentActivity() {
             Column(
 
                 horizontalAlignment = Alignment.CenterHorizontally,
-
                 modifier = Modifier.fillMaxSize()
-
             ) {
 
             }
-            Column {
+
                 Text(text = "Music playlist App",
-
                     fontSize = 40.sp,
-
                     fontWeight = FontWeight.Black
 
                 )
+            Divider()
+            OutlinedTextField(
+                value =song,
+                onValueChange = {text ->
+                    song = text
 
-            }
+                },
+                
+            )
+            Spacer(Modifier.height(50.dp))//Vertical spacing.
 
             Row {
                 Button(onClick = {
@@ -75,6 +80,26 @@ class MainActivity : ComponentActivity() {
                     var comments by remember {mutableStateOf("")}
                 }
             }
+            OutlinedTextField(
+                value =song,
+                onValueChange = {text ->
+                    song = text
+
+                }
+            )
+            OutlinedTextField(
+                value =artists,
+                onValueChange={text ->
+                    artists = text
+                }
+            )
+            OutlinedTextField(
+                value =ratings,
+                onValueChange={text ->
+                    ratings = text
+                })
+
+            Spacer(Modifier.height(50.dp))//Vertical spacing.
 
             Row {
                 Button(onClick = {
@@ -83,6 +108,11 @@ class MainActivity : ComponentActivity() {
                     Text(text = "Next")
                 }
             }
+
+
+            //---"Add item" Dialog UI---
+            //This dialog is shown when 'song Add itemDialog' is true
+
 
         }
     }
