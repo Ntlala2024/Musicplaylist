@@ -30,6 +30,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.musicplaylist.Secondscreen
 import com.example.musicplaylist.ui.theme.MusicPlaylistTheme
 
 class MainActivity : ComponentActivity() {
@@ -65,13 +66,16 @@ class MainActivity : ComponentActivity() {
                     song = text
 
                 },
-                
+
             )
             Spacer(Modifier.height(50.dp))//Vertical spacing.
 
             Row {
                 Button(onClick = {
                     //Run when the button is clicked/
+                    val display = Intent(this@MainActivity, Secondscreen::class.java)
+                    val AddtoPlaylist = null
+                    startActivity(AddtoPlaylist)
                 }) {
                     Text(text = "Add to Playlist")
                     var song by remember {mutableStateOf("")}
@@ -80,34 +84,7 @@ class MainActivity : ComponentActivity() {
                     var comments by remember {mutableStateOf("")}
                 }
             }
-            OutlinedTextField(
-                value =song,
-                onValueChange = {text ->
-                    song = text
 
-                }
-            )
-            OutlinedTextField(
-                value =artists,
-                onValueChange={text ->
-                    artists = text
-                }
-            )
-            OutlinedTextField(
-                value =ratings,
-                onValueChange={text ->
-                    ratings = text
-                })
-
-            Spacer(Modifier.height(50.dp))//Vertical spacing.
-
-            Row {
-                Button(onClick = {
-                    //Run when the button is clicked/
-                }) {
-                    Text(text = "Next")
-                }
-            }
 
 
             //---"Add item" Dialog UI---
